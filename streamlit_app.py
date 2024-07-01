@@ -36,7 +36,7 @@ st.sidebar.markdown('<h1 style="color: blue;">Select One output and at least one
 output_variable_model = st.sidebar.selectbox('Select One output Variable', column_names)
 
 # Select input variables to predict the target variable (output)
-input_variables_model = st.sidebar.multiselect('Select at least one input Variable', column_names, default=['Y', 'X1', 'X2', 'X3', 'X4', 'X5', , 'X6', 'X7', 'X8', 'X9', 'X10'])
+input_variables_model = st.sidebar.multiselect('Select at least one input Variable', column_names, default=['Y', 'X1', 'X2', 'X3', 'X4', 'X5', 'X6', 'X7', 'X8', 'X9', 'X10'])
 
 if not output_variable_model or not input_variables_model:
     st.warning('Select One output and at least one input Variable to start.')
