@@ -13,7 +13,8 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # Load data : put the file in the same directory as the script and use relative path to the data file (Tested Using github repository)
 
-file_path = '.Big LR Dataset - 2.csv'
+# file_path = '.Big LR Dataset - 2.csv'
+file_path = './Data_BarbeauFlux_noNaN.csv'
 
 data = pd.read_csv(file_path, header=0, sep=';', decimal='.', index_col=0)
 
@@ -36,10 +37,12 @@ st.sidebar.markdown('<h1 style="color: blue;">Select One output and at least one
 output_variable_model = st.sidebar.selectbox('Select One output Variable', column_names)
 
 # Select input variables to predict the target variable (output)
-input_variables_model = st.sidebar.multiselect('Select at least one input Variable', column_names, default=['Y', 'X1', 'X2', 'X3', 'X4', 'X5', 'X6', 'X7', 'X8', 'X9', 'X10'])
+# input_variables_model = st.sidebar.multiselect('Select at least one input Variable', column_names, default=['Y', 'X1', 'X2', 'X3', 'X4', 'X5', 'X6', 'X7', 'X8', 'X9', 'X10'])
+
+input_variables_model = st.sidebar.multiselect('Select at least one input Variable', column_names, default=['R_450', 'R_550', 'R_650', 'R_720', 'R_750', 'R_800'])
 
 if not output_variable_model or not input_variables_model:
-    st.warning('Select One output and at least one input Variable to start.')
+st.warning('Select One output and at least one input Variable to start.')
 
 # User option for setting the rate of test data
 test_data_rate = st.sidebar.slider('Select the rate of test data (%)', 0, 100, 20, 1)
