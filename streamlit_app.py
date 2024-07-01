@@ -42,7 +42,8 @@ output_variable_model = st.sidebar.selectbox('Select One output Variable', colum
 input_variables_model = st.sidebar.multiselect('Select at least one input Variable', column_names, default=['R_450', 'R_550', 'R_650', 'R_720', 'R_750', 'R_800'])
 
 if not output_variable_model or not input_variables_model:
-st.warning('Select One output and at least one input Variable to start.')
+    st.warning('Select One output and at least one input Variable to start.')
+
 
 # User option for setting the rate of test data
 test_data_rate = st.sidebar.slider('Select the rate of test data (%)', 0, 100, 20, 1)
