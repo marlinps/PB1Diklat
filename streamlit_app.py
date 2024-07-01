@@ -13,11 +13,11 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # Load data : put the file in the same directory as the script and use relative path to the data file (Tested Using github repository)
 
-# file_path = './Data_BarbeauFlux_noNaN.csv'
+file_path = '.Big LR Dataset - 2.csv'
 
-# data = pd.read_csv(file_path, header=0, sep=';', decimal='.', index_col=0)
+data = pd.read_csv(file_path, header=0, sep=';', decimal='.', index_col=0)
 
-data = pd.read_csv('house_clean.csv', header=0, sep=';', decimal='.', index_col=0)
+# data = pd.read_csv('Big LR Dataset - 2.csv', header=0, sep=';', decimal='.', index_col=0)
 
 column_names = data.columns.tolist()
 
